@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Set active class on current page's nav link
   const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.navbar nav a');
+  const navLinks = document.querySelectorAll('.navbar nav a, .mobile-menu nav a');
   
   navLinks.forEach(link => {
     const linkPath = link.getAttribute('href');
@@ -11,6 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('menu-active');
+      document.body.classList.toggle('menu-open');
+      mobileMenu.classList.toggle('show');
+    });
+    
+    // Close menu when clicking on a mobile menu link
+    const mobileLinks = document.querySelectorAll('.mobile-menu nav a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('menu-active');
+        document.body.classList.remove('menu-open');
+        mobileMenu.classList.remove('show');
+      });
+    });
+  }
 
   // Animation for sections on scroll
   const sections = document.querySelectorAll('section');
