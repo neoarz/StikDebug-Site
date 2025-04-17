@@ -438,7 +438,7 @@ footer p {
   }
   
   .menu-toggle {
-    display: block !important; /* Force display on mobile */
+    display: flex !important; /* Force display on mobile with flex */
     margin-left: 8px;
   }
   
@@ -453,10 +453,20 @@ footer p {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 8px;
   margin-left: 0.75rem;
   border-radius: 6px;
   transition: all 0.3s;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
 }
 
 .menu-toggle:hover {
@@ -466,28 +476,31 @@ footer p {
 .menu-icon {
   display: block;
   position: relative;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background-color: var(--text-color);
   transition: background-color 0.3s;
+  border-radius: 1px;
 }
 
 .menu-icon:before,
 .menu-icon:after {
   content: '';
   position: absolute;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background-color: var(--text-color);
   transition: transform 0.3s;
+  border-radius: 1px;
+  left: 0;
 }
 
 .menu-icon:before {
-  top: -7px;
+  top: -6px;
 }
 
 .menu-icon:after {
-  bottom: -7px;
+  bottom: -6px;
 }
 
 .menu-active .menu-icon {
@@ -495,11 +508,11 @@ footer p {
 }
 
 .menu-active .menu-icon:before {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 
 .menu-active .menu-icon:after {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* New Dropdown Mobile Menu */
