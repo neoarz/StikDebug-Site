@@ -12,15 +12,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mobile menu toggle
+  // Mobile menu toggle - enhanced for better toggle experience
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   
+  console.log('Menu toggle found:', menuToggle !== null);
+  console.log('Mobile menu found:', mobileMenu !== null);
+  
   if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
+    // Only add visible class if we're on mobile
+    if (window.innerWidth <= 768) {
+      menuToggle.classList.add('visible');
+    }
+    
+    // Update visibility on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 768) {
+        menuToggle.classList.add('visible');
+      } else {
+        menuToggle.classList.remove('visible');
+        menuToggle.classList.remove('menu-active');
+        document.body.classList.remove('menu-open');
+        mobileMenu.classList.remove('show');
+      }
+    });
+    
+    menuToggle.addEventListener('click', (e) => {
+      console.log('Menu toggle clicked');
+      e.preventDefault();
+      e.stopPropagation();
       menuToggle.classList.toggle('menu-active');
       document.body.classList.toggle('menu-open');
       mobileMenu.classList.toggle('show');
+      
+      // Force repaint to ensure transitions work properly
+      void mobileMenu.offsetWidth;
     });
     
     // Close menu when clicking on a mobile menu link
@@ -31,6 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('menu-open');
         mobileMenu.classList.remove('show');
       });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (document.body.classList.contains('menu-open') && 
+          !mobileMenu.contains(event.target) && 
+          !menuToggle.contains(event.target)) {
+        menuToggle.classList.remove('menu-active');
+        document.body.classList.remove('menu-open');
+        mobileMenu.classList.remove('show');
+      }
     });
   }
 

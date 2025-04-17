@@ -355,30 +355,27 @@ footer p {
 /* Mobile styles update */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
   }
   
-  .navbar-left, .navbar-center, .navbar-right {
-    margin: 8px 0;
+  .navbar-left {
+    flex: 0 1 auto;
   }
   
   .navbar-center {
-    margin-left: 0;
+    display: none;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   
   .navbar-divider {
     display: none;
-  }
-  
-  .navbar nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-  
-  .navbar nav a {
-    margin: 4px;
   }
   
   section {
@@ -392,23 +389,63 @@ footer p {
   .button-container {
     flex-direction: column;
   }
+  
+  .discord-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .discord-button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  body.menu-open .mobile-menu {
+    display: block;
+  }
+}
+
+/* Update media queries at the bottom as well */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block !important; /* Force display on mobile */
+    margin-left: 8px;
+  }
+  
+  .navbar {
+    flex-wrap: nowrap;
+  }
 }
 
 /* Mobile Menu Styles */
 .menu-toggle {
-  display: none;
+  display: none; /* Hidden by default */
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  margin-left: 1rem;
+  padding: 0.6rem;
+  margin-left: 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .menu-icon {
   display: block;
   position: relative;
   width: 24px;
-  height: 2px;
+  height: 3px;
   background-color: var(--text-color);
   transition: background-color 0.3s;
 }
@@ -418,7 +455,7 @@ footer p {
   content: '';
   position: absolute;
   width: 24px;
-  height: 2px;
+  height: 3px;
   background-color: var(--text-color);
   transition: transform 0.3s;
 }
@@ -450,16 +487,19 @@ footer p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--bg-color);
-  z-index: 900;
-  padding-top: 4rem;
+  background-color: rgba(16, 18, 24, 0.98);
+  z-index: 1000;
+  padding-top: 5rem;
   overflow-y: auto;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-menu.show {
-  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  display: block;
 }
 
 .mobile-menu nav {
@@ -519,45 +559,15 @@ footer p {
   border-bottom: none;
 }
 
-/* Update media queries */
+.menu-toggle.visible {
+  display: none; /* Changed from block to none */
+  background-color: rgba(59, 130, 246, 0.1);
+  border-radius: 4px;
+}
+
+/* Only show menu toggle on mobile when it has visible class */
 @media (max-width: 768px) {
-  .hide-on-mobile {
-    display: none;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .navbar {
-    flex-wrap: wrap;
-    padding: 0.75rem 1rem;
-  }
-  
-  .navbar-left {
-    flex: 1;
-  }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .discord-button {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-  }
-  
-  .discord-button img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  body.menu-open {
-    overflow: hidden;
-  }
-  
-  body.menu-open .mobile-menu {
-    display: block;
+  .menu-toggle.visible {
+    display: block !important;
   }
 } 
