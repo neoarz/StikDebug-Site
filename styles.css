@@ -244,6 +244,68 @@ footer p {
   background: #4c5d7d;
 }
 
+/* Quick Links Styles */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.quick-link {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.quick-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
+.quick-link h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.quick-link p {
+  margin: 0;
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Active nav link for current page */
+.navbar nav a[href$=".html"]:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--accent-color);
+}
+
+/* Update current page active state */
+.navbar nav a[href="index.html"]:has(body[data-page="home"]),
+.navbar nav a[href="routes/features.html"]:has(body[data-page="features"]),
+.navbar nav a[href="routes/download.html"]:has(body[data-page="download"]),
+.navbar nav a[href="routes/showcase.html"]:has(body[data-page="showcase"]),
+.navbar nav a[href="routes/faq.html"]:has(body[data-page="faq"]) {
+  background-color: rgba(59, 130, 246, 0.2);
+  font-weight: 600;
+}
+
+/* Mobile styles update */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -266,5 +328,13 @@ footer p {
   
   section {
     padding: 1.25rem;
+  }
+  
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-container {
+    flex-direction: column;
   }
 } 

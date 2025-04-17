@@ -1,24 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scrolling for navigation links
+  // Set active class on current page's nav link
+  const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.navbar nav a');
   
   navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 100, // Added more offset to account for the floating navbar
-          behavior: 'smooth'
-        });
-      }
-    });
+    const linkPath = link.getAttribute('href');
+    if (currentPath.endsWith(linkPath) || 
+        (currentPath.endsWith('/') && linkPath === 'index.html') ||
+        (currentPath === '' && linkPath === 'index.html')) {
+      link.classList.add('active');
+    }
   });
 
-  // Add animation to sections on scroll
+  // Animation for sections on scroll
   const sections = document.querySelectorAll('section');
   
   const observerOptions = {
@@ -41,26 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     section.style.transform = 'translateY(20px)';
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
-  });
-  
-  // Add active state to navigation links based on scroll position
-  window.addEventListener('scroll', () => {
-    let scrollPosition = window.scrollY;
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-      
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
   });
   
   // Current year for copyright

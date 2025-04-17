@@ -11,166 +11,55 @@
   <header class="navbar">
     <div class="logo">StikDebug</div>
     <nav>
-      <a href="#overview">Home</a>
-      <a href="#features">Features</a>
-      <a href="#download">Download</a>
-      <a href="#showcase">Showcase</a>
-      <a href="#faq">FAQ</a>
+      <a href="index.html">Home</a>
+      <a href="routes/features.html">Features</a>
+      <a href="routes/download.html">Download</a>
+      <a href="routes/showcase.html">Showcase</a>
+      <a href="routes/faq.html">FAQ</a>
     </nav>
   </header>
 
   <main>
-    <!-- Overview Section -->
-    <section id="overview">
+    <!-- Welcome Section -->
+    <section id="welcome">
       <details open>
-        <summary>Project Overview</summary>
+        <summary>Welcome to StikDebug</summary>
         <p>
           StikDebug is a work-in-progress on-device debugger for iOS versions 17.4+ (excluding iOS 18.4 beta 1), powered by idevice.
         </p>
+        <p>
+          This tool gives you unprecedented debugging capabilities directly on your iOS device. 
+          Check out our features and installation guides to get started!
+        </p>
+        <div class="button-container" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="routes/features.html" class="button">View Features</a>
+          <a href="routes/download.html" class="button">Download Now</a>
+        </div>
       </details>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
-      <details>
-        <summary>Features</summary>
-        <ul>
-          <li>Seamless installation via AltStore PAL</li>
-          <li>Modern, dark mode user interface</li>
-          <li>Robust pairing and debugging features</li>
-          <li>Detailed log viewing with Open Console</li>
-          <li>Integrated support for shortcuts and automated actions</li>
-        </ul>
-      </details>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download">
-      <details>
-        <summary>Download</summary>
-        <p>Get StikDebug for your iOS device:</p>
-        <ol>
-          <li>Get AltStore PAL installed from <a href="https://altstore.io" target="_blank">altstore.io</a>.</li>
-          <li>Add the StikDebug source: <a href="altstore://source?url=https://stikdebug.xyz/apps.json" target="_blank">Add</a></li>
-          <li>Install via AltStore PAL – you're done!</li>
-        </ol>
-        <a href="#" class="button">Download Now</a>
-      </details>
-    </section>
-
-    <!-- Showcase Section -->
-    <section id="showcase">
-      <details>
-        <summary>Showcase</summary>
-        <p>See StikDebug in action with these examples:</p>
-        <p>Coming soon...</p>
-      </details>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-      <details>
-        <summary>FAQ</summary>
-        <ul>
-          <li><strong>Do I need WiFi?</strong><br>Yes – WiFi or Airplane Mode is required.</li>
-          <li><strong>Is it open source?</strong><br>Yes – view on <a href="https://github.com/0-Blu/StikJIT/">GitHub</a>.</li>
-          <li><strong>Supported iOS?</strong><br>iOS 17.4 and up.</li>
-          <li><strong>Older iOS?</strong><br>No, update required.</li>
-        </ul>
-      </details>
-    </section>
-
-    <!-- Instructions Section -->
-    <section id="instructions">
-      <details>
-        <summary>Instructions</summary>
-
-        <details>
-          <summary>How to Install StikDebug (with AltStore PAL)</summary>
-          <ol>
-            <li>Get AltStore PAL installed from <a href="https://altstore.io" target="_blank">altstore.io</a>.</li>
-            <li>Add the StikDebug source: <a href="altstore://source?url=https://stikdebug.xyz/apps.json" target="_blank">Add</a></li>
-            <li>Install via AltStore PAL – you're done!</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>Pairing File Instructions</summary>
-          <ol>
-            <li>Create a pairing file using the <a href="https://docs.sidestore.io/docs/getting-started/pairing-file/" target="_blank">SideStore guide</a>.</li>
-            <li>Zip and send it to your device via AirDrop, email, or Proton Drive.</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>How to Use StikDebug</summary>
-          <ol>
-            <li>Open the app and click "Continue" to enable the loopback VPN.</li>
-            <li>Tap "Connect" and select an app to debug.</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>How to View the Logs</summary>
-          <p>Tap the <strong>Open Console</strong> button.</p>
-        </details>
-
-        <details>
-          <summary>Common Issues</summary>
-          <ol>
-            <li><strong>Pairing File Issue -9</strong><br>Fix by recreating the file with JitterBugPair.</li>
-          </ol>
-        </details>
-
-        <details>
-          <summary>iDevice Error Codes</summary>
-          <pre>
-Socket (-1)
-Ssl (-2)
-SslSetup (-3)
-Plist (-4)
-Utf8 (-5)
-UnexpectedResponse (-6)
-GetProhibited (-7)
-SessionInactive (-8)
-InvalidHostID (-9)
-NoEstablishedConnection (-10)
-HeartbeatSleepyTime (-11)
-HeartbeatTimeout (-12)
-NotFound (-13)
-CdtunnelPacketTooShort (-14)
-CdtunnelPacketInvalidMagic (-15)
-PacketSizeMismatch (-16)
-Json (-17)
-DeviceNotFound (-18)
-DeviceLocked (-19)
-UsbConnectionRefused (-20)
-UsbBadCommand (-21)
-UsbBadDevice (-22)
-UsbBadVersion (-23)
-BadBuildManifest (-24)
-ImageNotMounted (-25)
-Reqwest (-26)
-InternalError (-27)
-Xpc (-28)
-NsKeyedArchiveError (-29)
-UnknownAuxValueType (-30)
-UnknownChannel (-31)
-AddrParseError (-32)
-DisableMemoryLimitFailed (-33)
-NotEnoughBytes (-34)
-Utf8Error (-35)
-InvalidArgument (-36)
-UnknownErrorType (-37)
-
-FFI-Specific Bindings:
-AdapterIOFailed (-996)
-ServiceNotFound (-997)
-BufferTooSmall (-998)
-InvalidString (-999)
-InvalidArg (-1000)
-          </pre>
-        </details>
+    <!-- Quick Links Section -->
+    <section id="quick-links">
+      <details open>
+        <summary>Quick Links</summary>
+        <div class="quick-links">
+          <a href="routes/features.html" class="quick-link">
+            <h3>Features</h3>
+            <p>Discover what StikDebug can do for you</p>
+          </a>
+          <a href="routes/download.html" class="quick-link">
+            <h3>Download</h3>
+            <p>Get StikDebug on your device</p>
+          </a>
+          <a href="routes/showcase.html" class="quick-link">
+            <h3>Showcase</h3>
+            <p>See StikDebug in action</p>
+          </a>
+          <a href="routes/faq.html" class="quick-link">
+            <h3>FAQ</h3>
+            <p>Answers to common questions</p>
+          </a>
+        </div>
       </details>
     </section>
   </main>
