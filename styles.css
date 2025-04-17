@@ -653,4 +653,225 @@ footer p {
     right: 20px;
     z-index: 2000; /* Ensure it's above everything */
   }
+}
+
+/* Updated Hero Section Styles */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: var(--card-bg);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.hero-content {
+  padding-right: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(120deg, var(--accent-color), #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.hero-tagline {
+  font-size: 1.4rem;
+  color: #a0aec0;
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button.primary-button {
+  background: linear-gradient(135deg, var(--accent-color), #4c6ef5);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
+}
+
+.button.secondary-button {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--accent-color);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.button.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
+}
+
+.button.secondary-button:hover {
+  background: rgba(59, 130, 246, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.iphone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  transform: perspective(800px) rotateY(-15deg) rotateX(5deg);
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.5));
+}
+
+.iphone-frame:hover {
+  transform: perspective(800px) rotateY(-10deg) rotateX(2deg) translateY(-10px);
+}
+
+.iphone-screenshot {
+  width: 100%;
+  height: auto;
+  border-radius: 26px;
+  display: block;
+}
+
+/* Features Grid Styles */
+.features-grid {
+  padding: 2.5rem;
+  border-radius: 16px;
+  background-color: var(--card-bg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
+}
+
+.features-grid h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 41, 59, 0.8);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.feature-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #a0aec0;
+  line-height: 1.6;
+}
+
+/* Mobile Responsiveness for Hero Section */
+@media (max-width: 768px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+  
+  .hero-content {
+    order: 1;
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .hero-image {
+    order: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .iphone-frame {
+    transform: perspective(800px) rotateY(0deg) rotateX(5deg);
+    max-width: 220px;
+  }
+  
+  .iphone-frame:hover {
+    transform: perspective(800px) rotateY(0deg) rotateX(2deg) translateY(-5px);
+  }
+  
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
 } 

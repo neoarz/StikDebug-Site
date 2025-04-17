@@ -50,47 +50,52 @@
   </div>
 
   <main>
-    <!-- Welcome Section -->
-    <section id="welcome">
-      <details open>
-        <summary>Welcome to StikDebug</summary>
-        <p>
-          StikDebug is a work-in-progress on-device debugger for iOS versions 17.4+ (excluding iOS 18.4 beta 1), powered by idevice.
+    <!-- Hero Section with iPhone Display -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1>StikDebug</h1>
+        <p class="hero-tagline">On-device debugger for iOS 17.4+</p>
+        <p class="hero-description">
+          Powerful debugging tools directly on your iOS device.
+          Analyze, debug, and optimize your apps without a computer.
         </p>
-        <p>
-          This tool gives you unprecedented debugging capabilities directly on your iOS device. 
-          Check out our features and installation guides to get started!
-        </p>
-        <div class="button-container" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-          <a href="routes/features.html" class="button">View Features</a>
-          <a href="routes/download.html" class="button">Download Now</a>
+        <div class="hero-buttons">
+          <a href="routes/download.html" class="button primary-button">Download Now</a>
+          <a href="routes/features.html" class="button secondary-button">View Features</a>
         </div>
-      </details>
+      </div>
+      <div class="hero-image">
+        <div class="iphone-frame">
+          <img src="assets/iphone_1.png" alt="StikDebug App Screenshot" class="iphone-screenshot">
+        </div>
+      </div>
     </section>
 
-    <!-- Quick Links Section -->
-    <section id="quick-links">
-      <details open>
-        <summary>Quick Links</summary>
-        <div class="quick-links">
-          <a href="routes/features.html" class="quick-link">
-            <h3>Features</h3>
-            <p>Discover what StikDebug can do for you</p>
-          </a>
-          <a href="routes/download.html" class="quick-link">
-            <h3>Download</h3>
-            <p>Get StikDebug on your device</p>
-          </a>
-          <a href="routes/showcase.html" class="quick-link">
-            <h3>Showcase</h3>
-            <p>See StikDebug in action</p>
-          </a>
-          <a href="routes/faq.html" class="quick-link">
-            <h3>FAQ</h3>
-            <p>Answers to common questions</p>
-          </a>
+    <!-- Key Features Section -->
+    <section id="key-features" class="features-grid">
+      <h2>What StikDebug Offers</h2>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Real-time Debugging</h3>
+          <p>Analyze app performance and debug issues directly on your iOS device</p>
         </div>
-      </details>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>iOS 17.4+ Support</h3>
+          <p>Compatible with the latest iOS versions (excluding iOS 18.4 beta 1)</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Powerful Console</h3>
+          <p>Access detailed logs and execute debugging commands with our intuitive console</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Developer Tools</h3>
+          <p>Essential tools for iOS developers, all accessible directly on your device</p>
+        </div>
+      </div>
     </section>
   </main>
 
