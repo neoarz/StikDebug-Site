@@ -20,7 +20,9 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.7;
-  padding-bottom: 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Updated Navbar Styles */
@@ -152,6 +154,8 @@ main {
   max-width: 950px;
   margin: 2.5rem auto;
   padding: 1rem;
+  flex: 1;
+  width: 100%;
 }
 
 section {
@@ -267,10 +271,10 @@ footer {
   padding: 1.5rem 2rem;
   background-color: var(--header-footer-bg);
   border-top: 1px solid var(--border-color);
-  position: fixed;
-  bottom: 0;
+  position: relative;
   width: 100%;
   justify-content: center;
+  margin-top: auto;
 }
 
 footer p {
