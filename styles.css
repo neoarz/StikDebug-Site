@@ -26,7 +26,6 @@ body {
 /* Updated Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: rgba(22, 26, 36, 0.8);
   backdrop-filter: blur(12px);
@@ -68,7 +67,7 @@ body {
 .navbar-center {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 .navbar-divider {
@@ -80,12 +79,12 @@ body {
 
 .navbar nav {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.1rem;
 }
 
 .navbar nav a {
   margin: 0 8px;
-  color: var(--text-color);
+  color: rgba(230, 233, 240, 0.6);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -101,11 +100,13 @@ body {
 .navbar nav a.active {
   background-color: rgba(59, 130, 246, 0.2);
   font-weight: 600;
+  color: var(--text-color);
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .discord-button {
