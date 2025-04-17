@@ -31,7 +31,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
-  padding: 8px 24px;
+  padding: 10px 24px;
   margin: 15px 20px;
   border: 1px solid var(--border-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -87,7 +87,7 @@ body {
   color: rgba(230, 233, 240, 0.6);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   font-size: 0.95rem;
@@ -109,16 +109,16 @@ body {
   align-items: center;
   margin-left: auto;
   justify-content: flex-end;
-  gap: 1px;
+  gap: 8px;
 }
 
 .discord-button {
   display: flex;
-  align-items: right;
-  justify-content: right;
+  align-items: center;
+  justify-content: center;
   background-color: #5865F2;
   color: white;
-  padding: 6px 14px;
+  padding: 7px 15px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
@@ -364,9 +364,11 @@ footer p {
   .navbar {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.75rem 1rem;
-    margin: 20px;
-    top: 20px;
+    padding: 10px 12px;
+    margin: 15px 20px;
+    top: 15px;
+    position: relative;
+    z-index: 1001;
   }
   
   .navbar-left {
@@ -391,7 +393,7 @@ footer p {
   .navbar-right {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     margin-left: auto;
   }
   
@@ -408,29 +410,24 @@ footer p {
   }
   
   .discord-button {
-    padding: 8px 16px;
-    font-size: 0.95rem;
-    width: 100%;
+    padding: 7px 12px;
+    font-size: 0.9rem;
   }
   
   .discord-button img {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
-  }
-  
-  body.menu-open {
-    overflow: hidden;
-  }
-  
-  body.menu-open .mobile-menu {
-    display: block;
   }
   
   .navbar nav a {
     margin: 0 8px;
-    padding: 0.5rem 1rem;
+    padding: 0.45rem 0.85rem;
     font-size: 1rem;
+  }
+  
+  .menu-toggle {
+    margin-left: 4px;
   }
 }
 
@@ -456,21 +453,21 @@ footer p {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.6rem;
+  padding: 0.5rem;
   margin-left: 0.75rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  border-radius: 6px;
+  transition: all 0.3s;
 }
 
 .menu-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(59, 130, 246, 0.15);
 }
 
 .menu-icon {
   display: block;
   position: relative;
-  width: 24px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
   background-color: var(--text-color);
   transition: background-color 0.3s;
 }
@@ -479,18 +476,18 @@ footer p {
 .menu-icon:after {
   content: '';
   position: absolute;
-  width: 24px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
   background-color: var(--text-color);
   transition: transform 0.3s;
 }
 
 .menu-icon:before {
-  top: -8px;
+  top: -7px;
 }
 
 .menu-icon:after {
-  bottom: -8px;
+  bottom: -7px;
 }
 
 .menu-active .menu-icon {
@@ -498,56 +495,70 @@ footer p {
 }
 
 .menu-active .menu-icon:before {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .menu-active .menu-icon:after {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
+/* New Dropdown Mobile Menu */
 .mobile-menu {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(16, 18, 24, 0.98);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: auto;
+  min-width: 200px;
+  background: rgba(22, 26, 36, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
   z-index: 1000;
-  padding-top: 5rem;
-  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  border: 1px solid var(--border-color);
+  margin-top: 5px;
 }
 
 .mobile-menu.show {
   opacity: 1;
   visibility: visible;
   display: block;
+  transform: translateY(0);
 }
 
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .mobile-menu nav a {
-  padding: 1rem;
-  color: rgba(230, 233, 240, 0.6);
+  padding: 0.75rem 1rem;
+  color: var(--text-color);
   text-decoration: none;
-  font-size: 1.2rem;
-  border-bottom: 1px solid var(--border-color);
+  font-size: 1rem;
+  border-radius: 8px;
+  margin: 2px 0;
   display: flex;
   align-items: center;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu nav a:hover {
+  background-color: rgba(59, 130, 246, 0.1);
 }
 
 .mobile-menu nav a:before {
   content: '';
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   margin-right: 12px;
   background-position: center;
   background-repeat: no-repeat;
@@ -555,37 +566,14 @@ footer p {
   opacity: 0.7;
 }
 
-.mobile-menu nav a:first-child:before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e6e9f0' viewBox='0 0 24 24'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E");
-}
-
-.mobile-menu nav a:nth-child(2):before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e6e9f0' viewBox='0 0 24 24'%3E%3Cpath d='M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z'/%3E%3C/svg%3E");
-}
-
-.mobile-menu nav a:nth-child(3):before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e6e9f0' viewBox='0 0 24 24'%3E%3Cpath d='M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z'/%3E%3C/svg%3E");
-}
-
-.mobile-menu nav a:nth-child(4):before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e6e9f0' viewBox='0 0 24 24'%3E%3Cpath d='M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'/%3E%3C/svg%3E");
-}
-
-.mobile-menu nav a:nth-child(5):before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e6e9f0' viewBox='0 0 24 24'%3E%3Cpath d='M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z'/%3E%3C/svg%3E");
-}
-
 .mobile-menu nav a.active {
+  background-color: rgba(59, 130, 246, 0.2);
   color: var(--accent-color);
-  font-weight: 600;
-}
-
-.mobile-menu nav a:last-child {
-  border-bottom: none;
+  font-weight: 500;
 }
 
 .menu-toggle.visible {
-  display: none; /* Changed from block to none */
+  display: block;
   background-color: rgba(59, 130, 246, 0.1);
   border-radius: 4px;
 }

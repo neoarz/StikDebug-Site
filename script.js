@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mobile menu toggle - enhanced for better toggle experience
+  // Mobile menu toggle - enhanced for dropdown style
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         menuToggle.classList.remove('visible');
         menuToggle.classList.remove('menu-active');
-        document.body.classList.remove('menu-open');
         mobileMenu.classList.remove('show');
       }
     });
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       e.stopPropagation();
       menuToggle.classList.toggle('menu-active');
-      document.body.classList.toggle('menu-open');
       mobileMenu.classList.toggle('show');
       
       // Force repaint to ensure transitions work properly
@@ -54,18 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.classList.remove('menu-active');
-        document.body.classList.remove('menu-open');
         mobileMenu.classList.remove('show');
       });
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', (event) => {
-      if (document.body.classList.contains('menu-open') && 
+      if (mobileMenu.classList.contains('show') && 
           !mobileMenu.contains(event.target) && 
           !menuToggle.contains(event.target)) {
         menuToggle.classList.remove('menu-active');
-        document.body.classList.remove('menu-open');
         mobileMenu.classList.remove('show');
       }
     });
