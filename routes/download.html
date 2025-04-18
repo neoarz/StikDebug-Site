@@ -66,7 +66,7 @@
               <h3>First, install StikDebug</h3>
               <ol>
                 <li>Get AltStore PAL installed from <a href="https://altstore.io" target="_blank">altstore.io</a></li>
-                <li>Add the StikDebug source: <a href="altstore://source?url=https://stikdebug.xyz/apps.json" target="_blank">Add Source</a></li>
+                <li>Add the StikDebug source: <a href="#" onclick="navigator.clipboard.writeText('https://stikdebug.xyz/apps.json'); showToast('Source URL copied!'); return false;">Copy Source Link</a></li>
                 <li>Install StikDebug via AltStore PAL</li>
               </ol>
               <a href="altstore://source?url=https://stikdebug.xyz/apps.json" class="button">Add to AltStore</a>
@@ -193,6 +193,20 @@
     <p>&copy; 2025 StikDebug. All rights reserved.</p>
   </footer>
 
+  <!-- Toast notification container -->
+  <div class="toast-notification" id="toast">Source URL copied!</div>
+
   <script src="../script.js"></script>
+  <script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
 </body>
 </html> 
