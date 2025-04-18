@@ -1450,8 +1450,8 @@ footer p {
 }
 
 .platform-section {
-  max-width: 800px;
-  margin: 0 auto 0 0;
+  max-width: 100%;
+  margin: 0 0 2rem 0;
 }
 
 .platform-section h3 {
@@ -1459,6 +1459,7 @@ footer p {
   border-bottom: 1px solid rgba(59, 130, 246, 0.3);
   margin-bottom: 1.25rem;
   color: var(--text-color);
+  font-size: 1.3rem;
 }
 
 .platform-section ol {
@@ -1470,6 +1471,7 @@ footer p {
   position: relative;
   margin-bottom: 1rem;
   line-height: 1.6;
+  font-size: 1.08rem;
 }
 
 .platform-section ol li::marker {
@@ -1484,6 +1486,7 @@ footer p {
 
 .platform-section ul li {
   margin-bottom: 0.5rem;
+  font-size: 1.05rem;
 }
 
 .platform-section ul li::before {
@@ -1501,7 +1504,7 @@ footer p {
   border-radius: 8px;
   border: 1px solid var(--border-color);
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   overflow-x: auto;
 }
 
@@ -1510,13 +1513,14 @@ footer p {
   border-left: 4px solid #10b981;
   border-radius: 8px;
   padding: 1rem 1.25rem;
-  margin: 2rem auto 2rem 0;
-  max-width: 800px;
+  margin: 2rem 0;
+  max-width: 100%;
 }
 
 .simple-tip p {
   margin: 0;
   color: #d1d5db;
+  font-size: 1.05rem;
 }
 
 code {
