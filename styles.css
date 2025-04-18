@@ -2049,4 +2049,196 @@ code {
   .faq-accordion-item.active .faq-accordion-content {
     padding: 0 1rem 1rem;
   }
+}
+
+/* Developer page styles */
+.developers-hero {
+  background: linear-gradient(135deg, #1e2433 0%, #161a24 50%, #1a2031 100%);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.developers-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 90% 20%, rgba(76, 110, 245, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.developers-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.developers-hero h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(120deg, var(--accent-color), #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.developers-hero p {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.dev-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.dev-profile {
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-profile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dev-avatar {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.dev-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.dev-profile:hover .dev-avatar img {
+  border-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.dev-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dev-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.dev-role {
+  color: var(--accent-color);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.dev-bio {
+  color: #a0aec0;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.dev-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dev-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.dev-link:hover {
+  background: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.join-team {
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.join-team h2 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+}
+
+.join-team p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #a0aec0;
+}
+
+/* Mobile Responsiveness for Developer Page */
+@media (max-width: 768px) {
+  .developers-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .developers-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .dev-team {
+    grid-template-columns: 1fr;
+  }
+  
+  .dev-avatar img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .dev-info h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-accordion-content {
+    padding: 0 1rem;
+  }
+  
+  .faq-accordion-item.active .faq-accordion-content {
+    padding: 0 1rem 1rem;
+  }
 } 
