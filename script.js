@@ -67,6 +67,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // FAQ Accordion Functionality
+  const accordionItems = document.querySelectorAll('.faq-accordion-item');
+  
+  if (accordionItems.length) {
+    // Open the first FAQ item by default
+    accordionItems[0].classList.add('active');
+    
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.faq-accordion-header');
+      
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Close all accordion items
+        accordionItems.forEach(accItem => {
+          accItem.classList.remove('active');
+        });
+        
+        // If the clicked item wasn't active, make it active
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+  
+  // Error Code Search Functionality
+  const errorSearchInput = document.getElementById('errorCodeSearch');
+  const errorCodeItems = document.querySelectorAll('.error-code-item');
+  const errorFFICodes = document.querySelectorAll('.error-ffi-codes code');
+  
+  if (errorSearchInput && (errorCodeItems.length || errorFFICodes.length)) {
+    errorSearchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase().trim();
+      
+      // Search error code items
+      errorCodeItems.forEach(item => {
+        const codeText = item.textContent.toLowerCase();
+        if (searchTerm === '' || codeText.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // Search FFI code items
+      errorFFICodes.forEach(code => {
+        const codeText = code.textContent.toLowerCase();
+        if (searchTerm === '' || codeText.includes(searchTerm)) {
+          code.style.display = 'inline-block';
+        } else {
+          code.style.display = 'none';
+        }
+      });
+    });
+  }
+  
+  // Smooth scrolling for FAQ navigation links
+  const faqNavLinks = document.querySelectorAll('.faq-nav-item');
+  
+  if (faqNavLinks.length) {
+    faqNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Add some offset to account for the sticky navbar
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Update URL without page refresh
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+  }
+
   // Improved Image Carousel in Hero Section
   const carouselSetup = () => {
     const slides = document.querySelectorAll('.carousel-slide');
