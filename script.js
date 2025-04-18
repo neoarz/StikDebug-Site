@@ -345,4 +345,54 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  
+  // Platform download options functionality for download page
+  const downloadOptions = document.querySelectorAll('.download-option');
+  const platformDetails = document.querySelectorAll('.platform-instructions details');
+  
+  if (downloadOptions.length && platformDetails.length) {
+    // Store original hrefs to allow downloads to work
+    downloadOptions.forEach(option => {
+      const originalHref = option.getAttribute('href');
+      option.dataset.downloadUrl = originalHref;
+      
+      option.addEventListener('click', (e) => {
+        // Prevent the default behavior to handle navigation manually
+        e.preventDefault();
+        
+        // Determine which platform was clicked
+        const platformClasses = Array.from(option.querySelector('.platform-icon').classList);
+        let platform = '';
+        
+        if (platformClasses.includes('windows')) {
+          platform = 'Windows';
+        } else if (platformClasses.includes('macos')) {
+          platform = 'macOS';
+        } else if (platformClasses.includes('linux')) {
+          platform = 'Linux';
+        }
+        
+        // Find and open the matching details element
+        platformDetails.forEach(detail => {
+          const summaryText = detail.querySelector('summary').textContent;
+          if (summaryText.includes(platform)) {
+            // Close all details first
+            platformDetails.forEach(d => d.removeAttribute('open'));
+            // Open the selected one
+            detail.setAttribute('open', true);
+            
+            // Scroll to the details element
+            setTimeout(() => {
+              detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          }
+        });
+        
+        // Continue with the download after a short delay
+        setTimeout(() => {
+          window.location.href = option.dataset.downloadUrl;
+        }, 300);
+      });
+    });
+  }
 });

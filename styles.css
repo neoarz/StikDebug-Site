@@ -1295,4 +1295,241 @@ footer p {
   .feature-showcase h2 {
     font-size: 1.5rem;
   }
+}
+
+/* Updated Download Section Styles */
+.download-intro {
+  margin-bottom: 2rem;
+}
+
+.download-intro p {
+  font-size: 1.15rem;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+.installation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.install-card {
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 14px;
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.install-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+.card-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-color), #4c6ef5);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
+}
+
+.card-content {
+  flex: 1;
+}
+
+.install-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.download-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.platform-link {
+  display: flex;
+  align-items: center;
+  background: rgba(30, 41, 59, 0.7);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 120px;
+}
+
+.platform-link:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.platform-link:nth-child(1):hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+}
+
+.platform-link:nth-child(2):hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+}
+
+.platform-link:nth-child(3):hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+}
+
+.platform-link span {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.platform-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.platform-icon.windows {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'%3E%3Cpath d='M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801'/%3E%3C/svg%3E");
+}
+
+.platform-icon.macos {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f97316'%3E%3Cpath d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 15h-2v-7c0-.6.4-1 1-1h1c.6 0 1 .4 1 1v1h.5c.8 0 1.5.7 1.5 1.5v3c0 .8-.7 1.5-1.5 1.5H11zm1-9c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm5 9h-2c-.6 0-1-.4-1-1v-1h-.5c-.8 0-1.5-.7-1.5-1.5v-3c0-.8.7-1.5 1.5-1.5H16c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1zm-1-9c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z'/%3E%3C/svg%3E");
+}
+
+.platform-icon.linux {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.124.805.5 1.595 1.252 2.145.987.681 1.9.346 2.6.15.695-.195 1.355-.546 2.247-.725.78-.155 1.847-.24 3.34-.12 1.397.12 2.405.511 3.146.83.783.783.303 1.686.597 2.513.091.81-.501 1.358-1.297 1.561-2.132.2-.835.117-1.735-.137-2.628-.61-2.2-2.356-3.95-3.243-5.03-.517-.634-.9-1.71-1.064-2.677-.076-.456-.15-1.732-.15-2.588 0-2.4-1.218-4.602-3.33-4.65-.22-.005-.44-.01-.654-.01zm.415 15.34c-.78.001-1.82.176-2.195.357-.242.116-1.01.61-1.702.414-.741-.21-1.043-1.02-1.09-1.524-.048-.502.105-1.156.377-1.76.142-.316.379-.705.625-1.108.46-.753.865-1.304.607-2.315-.163-.627-.242-1.128-.166-1.632.41.326.852.653 1.253.985.43.357.852.716 1.213 1.14.294.346.521.738.74 1.13.105.195.205.397.308.592.103.195.222.384.262.596.047.254-.107.524-.273.735-.168.21-.379.388-.572.582-.22.222-.37.496-.323.775.054.336.352.598.652.8.91.063.263.063.398.033a2.28 2.28 0 00.398-.122c.226-.085.443-.198.65-.33.208-.134.403-.296.615-.437.318-.21.799-.368 1.333-.364.547.005 1.037.171 1.345.385.138.097.27.213.387.344.118.13.219.292.282.484a1.12 1.12 0 01.052.344c0 .448-.337.839-.787 1.035-.198.086-.364.186-.57.227-.205.04-.605.074-1.142.068-.553-.006-1.336-.107-1.932-.614-.196-.168-.461-.356-.775-.357z'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 768px) {
+  .installation-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .download-platforms {
+    flex-direction: column;
+  }
+  
+  .platform-link {
+    width: 100%;
+  }
+}
+
+/* Platform section and other required original styles */
+.instructions-separator {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  margin: 2.5rem 0;
+}
+
+.platform-section {
+  max-width: 800px;
+  margin: 0 auto 0 0;
+}
+
+.platform-section h3 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  margin-bottom: 1.25rem;
+  color: var(--text-color);
+}
+
+.platform-section ol {
+  padding-left: 2rem;
+  counter-reset: item;
+}
+
+.platform-section ol li {
+  position: relative;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.platform-section ol li::marker {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.platform-section ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.platform-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.platform-section ul li::before {
+  content: '•';
+  color: var(--accent-color);
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+}
+
+.platform-section pre {
+  margin: 0.75rem 0 0.75rem 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--code-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-family: monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+.simple-tip {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid #10b981;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 2rem auto 2rem 0;
+  max-width: 800px;
+}
+
+.simple-tip p {
+  margin: 0;
+  color: #d1d5db;
+}
+
+code {
+  background: rgba(30, 36, 51, 0.7);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #a5b4fc;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .platform-section {
+    padding: 0 0.5rem;
+  }
 } 
