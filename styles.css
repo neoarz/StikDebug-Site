@@ -774,15 +774,21 @@ footer p {
 .iphone-frame {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
+  height: 650px;
   margin: 0 auto;
-  transform: perspective(800px) rotateY(-15deg) rotateX(5deg);
+  transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
   transition: all 0.5s ease;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.5));
+  filter: none;
+  overflow: visible;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .iphone-frame:hover {
-  transform: perspective(800px) rotateY(-10deg) rotateX(2deg) translateY(-10px);
+  transform: perspective(1000px) rotateY(-10deg) rotateX(2deg) translateY(-10px);
 }
 
 .iphone-screenshot {
@@ -915,5 +921,84 @@ footer p {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Updated Carousel Styles with better separation */
+.carousel-container {
+  position: relative;
+  width: 130%;
+  height: 100%;
+  overflow: visible;
+  perspective: 1200px;
+  margin-left: -15%;
+  cursor: pointer;
+}
+
+.carousel-track {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.carousel-slide.active {
+  pointer-events: auto;
+}
+
+.carousel-slide.prev {
+  pointer-events: auto;
+}
+
+.carousel-slide.next {
+  pointer-events: auto;
+}
+
+.carousel-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100%;
+    margin-left: 0;
+    overflow: hidden;
+  }
+  
+  .iphone-frame {
+    transform: perspective(800px) rotateY(0deg) rotateX(5deg);
+    max-width: 180px;
+    height: 370px;
+  }
+  
+  .iphone-frame:hover {
+    transform: perspective(800px) rotateY(0deg) rotateX(2deg) translateY(-5px);
   }
 } 
