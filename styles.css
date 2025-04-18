@@ -1597,15 +1597,18 @@ code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.05) 0%, transparent 60%),
-              radial-gradient(circle at 90% 20%, rgba(76, 110, 245, 0.04) 0%, transparent 40%);
+  background: radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 90% 20%, rgba(76, 110, 245, 0.08) 0%, transparent 40%);
   pointer-events: none;
 }
 
 .faq-hero h1 {
   font-size: 2.8rem;
   margin: 0 0 1rem 0;
-  color: #ffffff;
+  background: linear-gradient(120deg, var(--accent-color), #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1.1;
 }
 
@@ -1695,7 +1698,7 @@ code {
   font-size: 1.8rem;
   margin-top: 0;
   margin-bottom: 2rem;
-  color: #fff;
+  color: var(--accent-color);
   position: relative;
   padding-bottom: 0.75rem;
 }
@@ -1707,7 +1710,7 @@ code {
   left: 0;
   width: 60px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(76, 110, 245, 0.3);
   border-radius: 1.5px;
 }
 
@@ -1776,6 +1779,8 @@ code {
 
 .faq-accordion-item:hover {
   border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .faq-accordion-header {
@@ -1935,6 +1940,7 @@ code {
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .faq-cta::before {
@@ -1944,15 +1950,18 @@ code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 60%),
-              radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+  background: radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 90% 20%, rgba(76, 110, 245, 0.08) 0%, transparent 40%);
   pointer-events: none;
 }
 
 .faq-cta h2 {
   font-size: 2rem;
   margin: 0 0 1rem 0;
-  color: var(--text-color);
+  background: linear-gradient(120deg, var(--accent-color), #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
 }
 
@@ -1971,17 +1980,17 @@ code {
   gap: 0.75rem;
   font-size: 1.1rem;
   padding: 0.9rem 1.75rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--accent-color);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .faq-cta .button:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: #4b85d6;
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
 }
 
 .faq-cta .button svg {
