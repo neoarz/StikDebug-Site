@@ -6,7 +6,7 @@
   <title>StikDebug - Features</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body data-page="features">
   <!-- Glass Navbar -->
   <header class="navbar">
     <div class="navbar-left">
@@ -50,50 +50,93 @@
   </div>
 
   <main>
-    <!-- Features Section -->
-    <section id="features">
-      <details open>
-        <summary>Features</summary>
-        <ul>
-          <li>Seamless installation via AltStore PAL</li>
-          <li>Modern, dark mode user interface</li>
-          <li>Robust pairing and debugging features</li>
-          <li>Detailed log viewing with Open Console</li>
-          <li>Integrated support for shortcuts and automated actions</li>
-        </ul>
-      </details>
+    <!-- Features Hero Section -->
+    <section class="features-hero">
+      <div class="features-hero-content">
+        <h1>Powerful iOS Debugging</h1>
+        <p>Discover all the powerful features that make StikDebug the ultimate on-device debugging solution for iOS developers.</p>
+      </div>
     </section>
 
-    <!-- Key Features Section -->
-    <section id="key-features" class="features-grid">
-      <h2>What StikDebug Offers</h2>
-      <div class="feature-cards">
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <h3>Real-time Debugging</h3>
-          <p>Analyze app performance and debug issues directly on your iOS device</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>iOS 17.4+ Support</h3>
-          <p>Compatible with the latest iOS versions (excluding iOS 18.4 beta 1)</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Powerful Console</h3>
-          <p>Access detailed logs and execute debugging commands with our intuitive console</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛠️</div>
-          <h3>Developer Tools</h3>
-          <p>Essential tools for iOS developers, all accessible directly on your device</p>
-        </div>
+    <!-- Feature Showcase Sections -->
+    <section class="feature-showcase right-image">
+      <div class="feature-text">
+        <h2>Modern Interface</h2>
+        <p>StikDebug features a sleek, intuitive interface designed with both usability and aesthetics in mind. The dark mode UI reduces eye strain during long debugging sessions and provides clear visibility of all debugging information.</p>
+        <ul class="feature-list">
+          <li>Customizable themes and accent colors</li>
+          <li>Intuitive navigation and controls</li>
+          <li>Optimized for both iPhone and iPad</li>
+        </ul>
+      </div>
+      <div class="feature-image">
+        <img src="../assets/iphone_1.png" alt="StikDebug Modern Interface" class="phone-screenshot">
+      </div>
+    </section>
+
+    <section class="feature-showcase left-image">
+      <div class="feature-image">
+        <img src="../assets/iphone_2.png" alt="StikDebug Pairing Process" class="phone-screenshot">
+      </div>
+      <div class="feature-text">
+        <h2>Seamless Use</h2>
+        <p>Easily enable JIT with all sideloaded apps signed with get-task-allow. StikDebug simplifies the debugging process, making it straightforward to enhance performance and troubleshoot your applications.</p>
+        <ul class="feature-list">
+          <li>One-click JIT enablement</li>
+          <li>Compatible with all sideloaded apps</li>
+          <li>No developer account required</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="feature-showcase right-image">
+      <div class="feature-text">
+        <h2>Powerful Sharing</h2>
+        <p>Easily share and copy logs and debugging information with your team. StikDebug makes collaboration simple with robust sharing capabilities that streamline the debugging process.</p>
+        <ul class="feature-list">
+          <li>Copy logs with one tap</li>
+          <li>Share debugging information via AirDrop</li>
+          <li>Export detailed reports for team review</li>
+        </ul>
+      </div>
+      <div class="feature-image">
+        <img src="../assets/iphone_3.png" alt="StikDebug Console" class="phone-screenshot">
+      </div>
+    </section>
+
+    <section class="feature-showcase left-image">
+      <div class="feature-image">
+        <img src="../assets/iphone_5.png" alt="StikDebug App Integration" class="phone-screenshot">
+      </div>
+      <div class="feature-text">
+        <h2>Customizable Themes</h2>
+        <p>The screenshot showcases StikDebug's themes and easy customizability with a modern feel. Choose from a variety of color schemes and accent colors to personalize your debugging experience.</p>
+        <ul class="feature-list">
+          <li>Multiple theme options</li>
+          <li>Customizable accent colors</li>
+          <li>Modern, clean interface design</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="feature-showcase right-image">
+      <div class="feature-text">
+        <h2>About Our Developers</h2>
+        <p>StikDebug is created by a dedicated team of iOS enthusiasts and developers committed to bringing professional debugging tools directly to your device. Our team works tirelessly to ensure StikDebug remains the best on-device debugging solution available.</p>
+        <ul class="feature-list">
+          <li>Experienced iOS developers</li>
+          <li>Passionate about mobile debugging</li>
+          <li>Committed to continuous improvement</li>
+        </ul>
+      </div>
+      <div class="feature-image">
+        <img src="../assets/iphone_6.png" alt="StikDebug Developers" class="phone-screenshot">
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 StikDebug. All rights reserved.</p>
+    <p>&copy; <span id="current-year">2025</span> StikDebug. All rights reserved.</p>
   </footer>
 
   <script src="../script.js"></script>

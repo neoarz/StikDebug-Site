@@ -327,4 +327,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (copyrightElement) {
     copyrightElement.textContent = copyrightElement.textContent.replace('2025', currentYear);
   }
+  
+  // Alternative approach for year element
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = currentYear;
+  }
+
+  // Add active class to current page's nav link based on data-page attribute
+  const body = document.body;
+  if (body.hasAttribute('data-page')) {
+    const currentPage = body.getAttribute('data-page');
+    document.querySelectorAll('.navbar nav a, .mobile-menu nav a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.includes(currentPage + '.html')) {
+        link.classList.add('active');
+      }
+    });
+  }
 });
