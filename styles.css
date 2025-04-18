@@ -151,11 +151,18 @@ header {
 }
 
 main {
-  max-width: 950px;
-  margin: 0.5rem auto;
+  max-width: 100%;
+  margin: 5px 10px 15px;
   padding: 1rem;
   flex: 1;
-  width: 100%;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin: 0.5rem auto;
+    padding: 1rem;
+    max-width: 98%;
+  }
 }
 
 section {
@@ -665,17 +672,34 @@ footer p {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 2rem;
-  padding: 1.5rem;
+  padding: 2.5rem;
   border-radius: 16px;
-  background-color: var(--card-bg);
+  background: linear-gradient(135deg, #1e2433 0%, #161a24 50%, #1a2031 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
   border: 1px solid var(--border-color);
+  min-height: calc(100vh - 160px);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 90% 20%, rgba(76, 110, 245, 0.08) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 .hero-content {
   padding-right: 1rem;
+  z-index: 1;
 }
 
 .hero-content h1 {
@@ -841,6 +865,7 @@ footer p {
   .hero-section {
     grid-template-columns: 1fr;
     padding: 1.5rem;
+    min-height: calc(100vh - 120px);
   }
   
   .hero-content {
@@ -877,5 +902,18 @@ footer p {
   
   .feature-cards {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Animated Hero Background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 } 
